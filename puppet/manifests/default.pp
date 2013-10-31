@@ -30,7 +30,9 @@ class { 'apt': }
 
 class { 'ppa': }
 
+class { 'php5': }
+
 class { 'nginx':
     apps => $apps
-  , require => Class['ppa']
+  , require => Class['ppa', 'php5']
 }
